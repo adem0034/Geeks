@@ -30,6 +30,8 @@ public class Hex {
 	  @Produces("application/json")
 	  public Response convertFtoCfromInput(@PathParam("f") int number) throws JSONException {
 
+		  		
+		  
 		JSONObject jsonObject = new JSONObject();
 		
 		List<Integer> binaryArray = new ArrayList<Integer>();						              		
@@ -76,11 +78,10 @@ public class Hex {
 				resultString += String.valueOf(binaryArray.get(j));
 			}
 						
-		}
-
+		}		
 		
-		jsonObject.put("result", resultString);
-		String resulttxt = "@Produces(\"application/json\") Output: \n\nF Output in hex: \n\n" + jsonObject;
-		return Response.status(200).entity(resulttxt).build();
+		jsonObject.put("result",resultString);
+		
+		return Response.status(200).entity(jsonObject.toString()).build();		
 	  }
 }

@@ -27,7 +27,7 @@ public class Octel {
 	  @GET
 	  @Produces("application/json")
 	  public Response convertFtoCfromInput(@PathParam("f") int number) throws JSONException {
-
+		  		 
 		  JSONObject jsonObject = new JSONObject();
 			
 			
@@ -51,10 +51,9 @@ public class Octel {
 				resultString += binaryArray.get(j);//			
 			}
 			
-
-			jsonObject.put("result", resultString);
-			String resulttxt = "@Produces(\"application/json\") Output: \n\nF Output in binary: \n\n" + jsonObject;
-			return Response.status(200).entity(resulttxt).build();
+			jsonObject.put("result",resultString);
+		
+			return Response.status(200).entity(jsonObject.toString()).build();		
 
 	  }
 }

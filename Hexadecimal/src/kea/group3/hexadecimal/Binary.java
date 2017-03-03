@@ -12,7 +12,6 @@ import javax.ws.rs.core.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 @Path("/binary")
 public class Binary {
 	 @GET
@@ -29,10 +28,10 @@ public class Binary {
 		return Response.status(200).entity(result).build();
 	  }
 	  @Path("{f}")
-	  @GET
+	  @GET	  
 	  @Produces("application/json")
 	  public Response convertFtoCfromInput(@PathParam("f") int number) throws JSONException {
-		  		 
+		  				  
 		JSONObject jsonObject = new JSONObject();
 		
 		
@@ -56,10 +55,10 @@ public class Binary {
 		{					
 			resultString += binaryArray.get(j);//			
 		}
+			
 		
-
-		jsonObject.put("result", resultString);
-		String resulttxt = "@Produces(\"application/json\") Output: \n\nF Output in binary: \n\n" + jsonObject;
-		return Response.status(200).entity(resulttxt).build();
+		jsonObject.put("result",resultString);
+		
+		return Response.status(200).entity(jsonObject.toString()).build();
 	  }
 }
