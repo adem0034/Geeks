@@ -1,5 +1,6 @@
 Mandatory Assignment 1
-Authors’
+
+Authors
 Adem Ökmen
 Mohammad Forhad Hossain
 Nour Hassan El-Haj Moussa
